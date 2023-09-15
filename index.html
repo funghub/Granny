@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+  <style>
+    .shortcutButton{
+      margin: 3px;
+        font-family: cursive;
+        font-size: 30px;
+    }
+    body{
+      font-family: cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- have buttons for user to click to show the message they want -->
+  <div id="shortcuts"></div>
+  <div id="big" style="font-size: 100px;"></div>
+</body>
+
+</html>
+
+
+<script>
+  const shortcutsGroup = document.getElementById('shortcuts');
+  const shortcuts = [
+    '食飯😋',
+    '等一等⌚',
+    '太早, 瞓返覺😴',
+    '安靜一點🤫',
+    '安靜🔇',
+    '帶耳機🦻',
+    'YES✅',
+    'NO⛔'
+  ];
+
+  const bigDiv = document.getElementById('big');
+
+  for (let i = 0; i < shortcuts.length; i++) {
+    const shortcutText = shortcuts[i];
+    const shortcutButton = document.createElement('button');
+    shortcutButton.innerText = shortcutText;
+    shortcutButton.className = "shortcutButton";
+    shortcutButton.addEventListener('click', () => {
+      console.log(shortcutText);
+      bigDiv.innerText = shortcutText;
+    })
+    shortcutsGroup.appendChild(shortcutButton);
+  }
+</script>
